@@ -1,12 +1,14 @@
-version: "3.8"
+version: "3.7"
    
 services:
-  db:
-    image: "postgres"
-    volumes:
-      - database-data:/var/lib/postgresql/data/
-    env_file:
-      - .env
 
-volumes:
-  database-data:
+  scraper:
+    build: scraper
+    restart: always
+    volumes:
+      - ./scraper/src:/code
+    command: python sysbo_scraper.py
+    depends_on:
+      - hub
+    env_file:
+      - scraper/.env

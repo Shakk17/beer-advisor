@@ -3,7 +3,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 
 
-with open('data/Products-2020-okt-05-091213.html', encoding='utf-8') as f:
+with open('../data/Products-2020-okt-17-084750.xls', encoding='utf-8') as f:
     data = f.read()
 
 print('File loaded.')
@@ -30,4 +30,4 @@ for i, row in enumerate(rows[1:]):
         print(f'{(progress * 100):.1f} %')
 
 beers_df = pd.DataFrame(beers_list)
-beers_df.to_csv('data/sysbo.csv')
+beers_df.to_csv('../data/sysbo.csv')
