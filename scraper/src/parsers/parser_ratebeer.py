@@ -45,4 +45,4 @@ for i, item in enumerate(items):
         # AAA, ZZZ not found in the original string
         found = ''  # apply your error handling
 beers_df = pd.DataFrame(data=beers_list)
-beers_df.to_csv('data/ratebeer.csv')
+beers_df.to_csv('data/ratebeer_raw.csv')
